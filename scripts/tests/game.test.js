@@ -38,10 +38,20 @@ describe ("newGame works correctly", () => {
 
     beforeAll(() => {
         game.score = 53;
+        game.currentGame = ["first", "second", "third"];
+        game.playerMoves = ["first", "second"];
         newGame();
     });
 
     test("score should be 'zero'", () => {
         expect(game.score).toEqual(0);
+    });
+
+    test("currentGame should be empty array", () => {
+        expect(game.currentGame).toEqual([]);
+    });
+
+    test("playerMoves should be empty array", () => {
+        expect(game.playerMoves).toEqual([]);
     });
 });
