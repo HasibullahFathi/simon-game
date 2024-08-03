@@ -12,8 +12,12 @@ beforeAll(() => {
     document.close();
 });
 
-describe("Game object contains correct keys", () => {
-    test("Score key exists", () => {
+describe("game object contains correct keys", () => {
+    test("score key exists", () => {
             expect("score" in game).toBe(true);
+        });
+
+        test("current game key exists", () => {
+            expect("currentGame" in game).toBe(true);
         });
 });
