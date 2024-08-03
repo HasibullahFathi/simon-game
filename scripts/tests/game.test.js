@@ -20,4 +20,12 @@ describe("game object contains correct keys", () => {
         test("current game key exists", () => {
             expect("currentGame" in game).toBe(true);
         });
+
+        test("player moves key exists", () => {
+            expect("playerMoves" in game).toBe(true);
+        });
+
+        test("choices key exists", () => {
+            expect("choices" in game).toBe(true);
+        });
 });
