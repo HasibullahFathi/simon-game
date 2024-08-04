@@ -60,3 +60,22 @@ describe ("newGame works correctly", () => {
         expect(document.getElementById("score").innerText).toEqual(0);
     });
 });
+
+describe ("gamePlay works correctly", () => {
+    beforeEach (() => {
+        game.score = 0;
+        game.currentGame = [];
+        game.playerMoves = [];
+        addTurn();
+    });
+    afterEach (() => {
+        game.score = 0;
+        game.currentGame = [];
+        game.playerMoves = [];
+    });
+
+    test("addTurn adds new turn in the game", () => {
+        addTurn();
+        expect(game.currentGame.length).toEqual(2);
+    });
+});
