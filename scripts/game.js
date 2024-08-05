@@ -17,9 +17,9 @@ function newGame() {
     game.currentGame = [];
     game.playerMoves = [];
     for(let circle of document.getElementsByClassName('circle')){
-        if (circle.getAttribute("data-listener") !== ("true")){
+        if (circle.getAttribute("data-listener") !== "true"){
             circle.addEventListener("click", (e) => {
-                let move = e.target.removeChild.getAttribute("id");
+                let move = e.target.getAttribute("id");
                 lightsOn(move);
                 game.playerMoves.push(move);
                 playerTurn();
@@ -53,4 +53,15 @@ function showTurns() {
     }, 800);
 }
 
-module.exports = { game, newGame, showScore, addTurn, lightsOn, showTurns };
+function playerTurn() {
+    let i = game.playerMoves.length - 1;
+    if (game.playerMoves[i] === game.currentGame[i]) {
+        if (game.playerMoves.length === game.currentGame.length) {
+            game.score++;
+            showScore();
+            addTurn();
+        }
+    }
+}
+
+module.exports = { game, newGame, showScore, addTurn, lightsOn, showTurns, playerTurn };
