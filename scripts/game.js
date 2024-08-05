@@ -5,6 +5,7 @@ let game = {
     playerMoves: [],
     turnNumber: 0,
     turnInProgress: false,
+    lastButton: "",
     choices: ["button1", "button2", "button3", "button4"]
 };
 
